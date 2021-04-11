@@ -1,0 +1,4 @@
+fleece-dir: fleece
+repo-root: .
+docker-context: ..
+dockerfile-path: ./venus/fleece/docker/go-fuzz.dockerfile
