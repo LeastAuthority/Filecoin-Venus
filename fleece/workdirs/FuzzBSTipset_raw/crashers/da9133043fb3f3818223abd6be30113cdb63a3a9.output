@@ -1,0 +1,60 @@
+panic: decoded states don't match
+
+goroutine 1 [running]:
+github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzBSTipset_UnmarshalCBOR_raw(0x7f260c177000, 0x35, 0x35, 0x4)
+	/tmp/fuzzing/pkg/chainsync/exchange/protocol_fuzz.go:77 +0x55d
+go-fuzz-dep.Main(0xc000661f60, 0x3, 0x3)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/filecoin-project/venus/pkg/chainsync/exchange/go.fuzz.main/main.go:19 +0x72
+
+goroutine 19 [select]:
+github.com/ipfs/go-log/writer.(*MirrorWriter).logRoutine(0xc000197380)
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:71 +0x136
+created by github.com/ipfs/go-log/writer.NewMirrorWriter
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:36 +0xd1
+
+goroutine 20 [select]:
+go.opencensus.io/stats/view.(*worker).start(0xc000254100)
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:276 +0xfb
+created by go.opencensus.io/stats/view.init.0
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:34 +0x68
+
+goroutine 36 [runnable]:
+net.simpleMaskLength(0xc00024fcf0, 0x10, 0x10, 0x1)
+	/usr/local/go/src/net/ip.go:441 +0xf7
+net.IPMask.Size(0xc00024fcf0, 0x10, 0x10, 0xc00012c540, 0x16)
+	/usr/local/go/src/net/ip.go:460 +0x5b
+github.com/libp2p/go-cidranger/net.NewNetwork(0xc00024fd00, 0x10, 0x10, 0xc00024fcf0, 0x10, 0x10, 0x0, 0x0, 0x0, 0x6b)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/net/ip.go:179 +0x5b
+github.com/libp2p/go-cidranger.newPrefixTree(0x1a7ae02, 0x4, 0x4)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:71 +0x125
+github.com/libp2p/go-cidranger.newPathprefixTrie(0xc00013f8d0, 0x4, 0x4, 0x30, 0x1c, 0x4)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:80 +0x91
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc000136a20, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x1b, 0x65, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:256 +0x426
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc0001335c0, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x1a, 0x66, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc0001324e0, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x17, 0x69, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00012d2c0, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0xa, 0x76, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc000118540, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x6, 0x7a, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc000118180, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x5, 0x7b, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc000118240, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x4, 0x7c, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc0001180c0, 0xc00013f8d0, 0x4, 0x4, 0x30, 0x1d079e0, 0xc00013d280, 0x4, 0x4, 0x30)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).Insert(0xc0001180c0, 0x1d079e0, 0xc00013d280, 0x10, 0x1d12c00)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:95 +0xf8
+github.com/libp2p/go-cidranger.(*versionedRanger).Insert(0xc00010e020, 0x1d079e0, 0xc00013d280, 0x10, 0x10)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/version.go:29 +0x148
+github.com/libp2p/go-libp2p-asn-util.newAsnStore(0x0, 0x0, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:61 +0x263
+github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore.func1(0xc000298000)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:89 +0x68
+created by github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:87 +0xa5
+exit status 2

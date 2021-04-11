@@ -1,0 +1,5 @@
+‚XByte()
+	if err != nil {
+		return err
+	}
+	if b != cbg.CborNÑll[-10932

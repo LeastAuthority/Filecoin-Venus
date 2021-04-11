@@ -1,0 +1,56 @@
+panic: decoded states don't match
+
+goroutine 1 [running]:
+github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzBSTipset_raw(0x7f7646dfe000, 0xd9, 0xd9, 0x3)
+	/tmp/fuzzing/pkg/chainsync/exchange/protocol_fuzz.go:62 +0x3bf
+go-fuzz-dep.Main(0xc0007bff60, 0x3, 0x3)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/filecoin-project/venus/pkg/chainsync/exchange/go.fuzz.main/main.go:19 +0x72
+
+goroutine 6 [select]:
+github.com/ipfs/go-log/writer.(*MirrorWriter).logRoutine(0xc0000af380)
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:71 +0x136
+created by github.com/ipfs/go-log/writer.NewMirrorWriter
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:36 +0xd1
+
+goroutine 18 [select]:
+go.opencensus.io/stats/view.(*worker).start(0xc000146100)
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:276 +0xfb
+created by go.opencensus.io/stats/view.init.0
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:34 +0x68
+
+goroutine 14 [runnable]:
+github.com/libp2p/go-cidranger.newPrefixTree(0x1a7ae02, 0x4, 0x4)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:68 +0x15d
+github.com/libp2p/go-cidranger.newPathprefixTrie(0xc000027fd0, 0x4, 0x4, 0x30, 0x30, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:80 +0x91
+github.com/libp2p/go-cidranger.newEntryTrie(...)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:87
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009b860, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0x28, 0x6f, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:247 +0x550
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009a9c0, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0xe, 0x72, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009b260, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0xd, 0x73, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009a7e0, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0xa, 0x76, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009a900, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0x6, 0x7a, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009aea0, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0x5, 0x7b, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009a4e0, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0x4, 0x7c, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).insert(0xc00009a420, 0xc000027fd0, 0x4, 0x4, 0x30, 0x1d07a80, 0xc0000989c0, 0x4, 0x4, 0x30)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:264 +0x378
+github.com/libp2p/go-cidranger.(*prefixTrie).Insert(0xc00009a420, 0x1d07a80, 0xc0000989c0, 0x10, 0x1d12ca0)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/trie.go:95 +0xf8
+github.com/libp2p/go-cidranger.(*versionedRanger).Insert(0xc0001b2020, 0x1d07a80, 0xc0000989c0, 0x10, 0x10)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/version.go:29 +0x148
+github.com/libp2p/go-libp2p-asn-util.newAsnStore(0x0, 0x0, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:61 +0x263
+github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore.func1(0xc000294000)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:89 +0x68
+created by github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:87 +0xa5
+exit status 2

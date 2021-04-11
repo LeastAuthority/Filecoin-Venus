@@ -1,0 +1,10 @@
+setWomment found pendin
+	if extra > cbg.ByteArrayMaxLen {
+		return fmt.Errorf("{{ .Name }}: byte array too large (%d)", extra)
+	}
+	if maj != cbg.MajByteString {
+		return fmt.Errorf("expected byte array")
+	}
+	{{if .IsArray}}
+	if extra != {{ .Len }} {
+		retur

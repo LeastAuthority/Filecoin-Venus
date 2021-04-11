@@ -1,0 +1,32 @@
+panic: (func(string, ...interface {}) error) 0x1ca5970
+
+goroutine 1 [running]:
+github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzRequest_UnmarshalCBOR_structured(0x7f8a5cdfa000, 0x0, 0x0, 0x4)
+	/tmp/fuzzing/pkg/chainsync/exchange/protocol_fuzz.go:100 +0x259
+go-fuzz-dep.Main(0xc00073ff58, 0x4, 0x4)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/filecoin-project/venus/pkg/chainsync/exchange/go.fuzz.main/main.go:21 +0x7a
+
+goroutine 6 [select]:
+github.com/ipfs/go-log/writer.(*MirrorWriter).logRoutine(0xc0000af380)
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:71 +0x136
+created by github.com/ipfs/go-log/writer.NewMirrorWriter
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:36 +0xd1
+
+goroutine 7 [select]:
+go.opencensus.io/stats/view.(*worker).start(0xc0001d8100)
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:276 +0xfb
+created by go.opencensus.io/stats/view.init.0
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:34 +0x68
+
+goroutine 14 [runnable]:
+github.com/libp2p/go-cidranger.(*versionedRanger).Insert(0xc0001c8020, 0x1d08aa0, 0xc00061a000, 0x10, 0x10)
+	/root/go/pkg/mod/github.com/libp2p/go-cidranger@v1.1.0/version.go:23 +0x28
+github.com/libp2p/go-libp2p-asn-util.newAsnStore(0x0, 0x0, 0x0)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:61 +0x263
+github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore.func1(0xc000220000)
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:89 +0x68
+created by github.com/libp2p/go-libp2p-asn-util.newIndirectAsnStore
+	/root/go/pkg/mod/github.com/libp2p/go-libp2p-asn-util@v0.0.0-20200825225859-85005c6cf052/asn.go:87 +0xa5
+exit status 2

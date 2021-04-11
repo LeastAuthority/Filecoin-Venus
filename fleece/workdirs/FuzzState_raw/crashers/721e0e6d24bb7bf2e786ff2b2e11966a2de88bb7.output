@@ -1,0 +1,16 @@
+panic: encoded states don't match
+
+goroutine 1 [running]:
+github.com/filecoin-project/venus/tools/conformance/chaos.FuzzState_UnmarshalCBOR_raw(0x7faac8277000, 0x5, 0x5, 0x4)
+	/tmp/fuzzing/tools/conformance/chaos/cbor_gen_fuzz.go:78 +0x6b9
+go-fuzz-dep.Main(0xc0001e1f68, 0x2, 0x2)
+	go-fuzz-dep/main.go:36 +0x1b8
+main.main()
+	github.com/filecoin-project/venus/tools/conformance/chaos/go.fuzz.main/main.go:17 +0x5d
+
+goroutine 6 [select]:
+github.com/ipfs/go-log/writer.(*MirrorWriter).logRoutine(0xc0000af500)
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:71 +0x136
+created by github.com/ipfs/go-log/writer.NewMirrorWriter
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:36 +0xd1
+exit status 2

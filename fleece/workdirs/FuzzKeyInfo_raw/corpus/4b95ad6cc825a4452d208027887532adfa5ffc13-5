@@ -1,0 +1,6 @@
+‚XByte()
+	if err != nil {
+		return err
+	}
+	if b != cbg.CborNull[0] {
+		

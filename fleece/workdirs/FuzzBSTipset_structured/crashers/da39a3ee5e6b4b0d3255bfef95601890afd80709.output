@@ -1,0 +1,81 @@
+program hanged (timeout 10 seconds)
+
+SIGABRT: abort
+PC=0x5f38e1 m=0 sigcode=0
+
+goroutine 1 [running]:
+reflect.packEface(0x19d2280, 0xc00207087a, 0x188, 0x0, 0xd295010b5cb970db)
+	/usr/local/go/src/reflect/value.go:117 +0x141 fp=0xc001e58c48 sp=0xc001e58c08 pc=0x5f38e1
+reflect.valueInterface(0x19d2280, 0xc00207087a, 0x188, 0x3ad6e01, 0x19d2200, 0xc0005b83d8)
+	/usr/local/go/src/reflect/value.go:1046 +0x270 fp=0xc001e58c98 sp=0xc001e58c48 pc=0x5f9510
+reflect.Value.Interface(...)
+	/usr/local/go/src/reflect/value.go:1016
+github.com/google/gofuzz.(*fuzzerContext).tryCustom(0xc00021c150, 0x19d2280, 0xc00207087a, 0x188, 0xc001d10800)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:349 +0x805 fp=0xc001e58d58 sp=0xc001e58c98 pc=0xaf2905
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x19d2280, 0xc00207087a, 0x188, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:265 +0x1f0 fp=0xc001e58f20 sp=0xc001e58d58 pc=0xaf0cd0
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x19ca900, 0xc001d108c8, 0x197, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:302 +0x11cd fp=0xc001e590e8 sp=0xc001e58f20 pc=0xaf1cad
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x1a15f00, 0xc001d108c0, 0x199, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:327 +0xfe5 fp=0xc001e592b0 sp=0xc001e590e8 pc=0xaf1ac5
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x19f8060, 0xc002040658, 0x196, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:293 +0xcc8 fp=0xc001e59478 sp=0xc001e592b0 pc=0xaf17a8
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x19c5680, 0xc00245b7d0, 0x197, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:302 +0x11cd fp=0xc001e59640 sp=0xc001e59478 pc=0xaf1cad
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x1a6b3a0, 0xc00245b7a0, 0x199, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:327 +0xfe5 fp=0xc001e59808 sp=0xc001e59640 pc=0xaf1ac5
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x1a4a840, 0xc00012c188, 0x196, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:293 +0xcc8 fp=0xc001e599d0 sp=0xc001e59808 pc=0xaf17a8
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x19c56c0, 0xc0001102c0, 0x197, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:302 +0x11cd fp=0xc001e59b98 sp=0xc001e599d0 pc=0xaf1cad
+github.com/google/gofuzz.(*fuzzerContext).doFuzz(0xc00021c150, 0x1a15e60, 0xc0001102c0, 0x199, 0x0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:327 +0xfe5 fp=0xc001e59d60 sp=0xc001e59b98 pc=0xaf1ac5
+github.com/google/gofuzz.(*Fuzzer).fuzzWithContext(...)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:239
+github.com/google/gofuzz.(*Fuzzer).Fuzz(0xc0000a4230, 0x19f7ee0, 0xc0001102c0)
+	/root/go/pkg/mod/github.com/google/gofuzz@v1.2.0/fuzz.go:213 +0x17b fp=0xc001e59db8 sp=0xc001e59d60 pc=0xaf089b
+github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzBSTipset_UnmarshalCBOR_structured(0x7fe33be00000, 0x0, 0x0, 0x4)
+	/tmp/fuzzing/pkg/chainsync/exchange/protocol_fuzz.go:17 +0x154 fp=0xc001e59ea8 sp=0xc001e59db8 pc=0xaf9df4
+go-fuzz-dep.Main(0xc001e59f68, 0x2, 0x2)
+	go-fuzz-dep/main.go:36 +0x1b8 fp=0xc001e59f50 sp=0xc001e59ea8 pc=0x5bfc58
+main.main()
+	github.com/filecoin-project/venus/pkg/chainsync/exchange/go.fuzz.main/main.go:17 +0x5d fp=0xc001e59f88 sp=0xc001e59f50 pc=0xafa5dd
+runtime.main()
+	runtime/proc.go:225 +0x256 fp=0xc001e59fe0 sp=0xc001e59f88 pc=0x563456
+runtime.goexit()
+	runtime/asm_amd64.s:1371 +0x1 fp=0xc001e59fe8 sp=0xc001e59fe0 pc=0x596021
+
+goroutine 6 [select]:
+github.com/ipfs/go-log/writer.(*MirrorWriter).logRoutine(0xc0000af380)
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:71 +0x136
+created by github.com/ipfs/go-log/writer.NewMirrorWriter
+	/root/go/pkg/mod/github.com/ipfs/go-log@v1.0.4/writer/writer.go:36 +0xd1
+
+goroutine 7 [select]:
+go.opencensus.io/stats/view.(*worker).start(0xc0001d8100)
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:276 +0xfb
+created by go.opencensus.io/stats/view.init.0
+	/root/go/pkg/mod/go.opencensus.io@v0.22.5/stats/view/worker.go:34 +0x68
+
+rax    0x19d2280
+rbx    0xbc
+rcx    0x7fe33bdf0000
+rdx    0x7fe33bdf0000
+rdi    0x150
+rsi    0x19fd3e0
+rbp    0xc001e58c38
+rsp    0xc001e58c08
+r8     0x0
+r9     0x1
+r10    0x2
+r11    0xc001d239c0
+r12    0x19d
+r13    0x19c
+r14    0x200
+r15    0xffffffffffffffff
+rip    0x5f38e1
+rflags 0x246
+cs     0x33
+fs     0x0
+gs     0x0
+exit status 2
