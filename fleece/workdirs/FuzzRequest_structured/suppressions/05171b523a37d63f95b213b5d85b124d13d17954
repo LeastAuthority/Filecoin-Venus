@@ -1,0 +1,4 @@
+panic: (func(string, ...interface {}) error) 0x1ca59e8
+github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzRequest_structured
+go-fuzz-dep.Main
+main.main
