@@ -1,4 +1,4 @@
-panic: decoded states don't match
+panic: decoded tipsets don't match
 
 goroutine 1 [running]:
 github.com/filecoin-project/venus/pkg/chainsync/exchange.FuzzBSTipset_UnmarshalCBOR_raw(0x7f260c177000, 0x35, 0x35, 0x4)

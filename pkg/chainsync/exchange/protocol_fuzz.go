@@ -88,17 +88,17 @@ func FuzzRequest_raw(data []byte) int {
 	writer1 := new(bytes.Buffer)
 	err = request1.MarshalCBOR(writer1)
 	if err != nil {
-		panic(errors.New("unable to encode decoded state"))
+		panic(errors.New("unable to encode decoded request"))
 	}
 
 	request2 := Request{}
 	err = request2.UnmarshalCBOR(writer1)
 	if err != nil {
-		panic(errors.New("unable to decode re-encoded state"))
+		panic(errors.New("unable to decode re-encoded request"))
 	}
 
 	if !reflect.DeepEqual(request1, request2) {
-		panic(errors.New("decoded states don't match"))
+		panic(errors.New("decoded request don't match"))
 	}
 
 	return fleece.FuzzNormal
