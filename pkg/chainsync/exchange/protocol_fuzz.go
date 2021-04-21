@@ -5,6 +5,8 @@ package exchange
 import (
 	"bytes"
 	"errors"
+	"fmt"
+	"gopkg.in/d4l3k/messagediff.v1"
 	"reflect"
 
 	gofuzz "github.com/google/gofuzz"
@@ -59,7 +61,12 @@ func FuzzBSTipset_raw(data []byte) int {
 	}
 
 	if !reflect.DeepEqual(ts1, ts2) {
-		panic(errors.New("decoded states don't match"))
+		// NB: for triage only
+		diff, _ := messagediff.PrettyDiff(ts1, ts2)
+		fmt.Printf("%s\n", diff)
+		//fmt.Printf("Int.Cmp: %v\n", ts1.Blocks[1].ParentBaseFee.Int.Cmp(ts2.Blocks[1].ParentBaseFee.Int))
+		//fmt.Printf("Int.Cmp: %v\n", ts1.Messages.Bls[1].GasPremium.Int.Cmp(ts2.Messages.Bls[1].GasPremium.Int))
+		panic(errors.New("decoded tipsets don't match"))
 	}
 
 	return fleece.FuzzNormal
